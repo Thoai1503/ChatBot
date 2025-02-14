@@ -27,10 +27,10 @@ const Chat = () => {
 
       const response = await axios.post(
         "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
-        { contents: formattedHistory }, // Body as second argument
+        { contents: formattedHistory },
         {
           headers: { "Content-Type": "application/json" },
-          params: { key: "AIzaSyDC7W0zDLfunzMLqAIIIcM-J90b-J9fFd8" }, // API key as a query parameter
+          params: { key: "AIzaSyDC7W0zDLfunzMLqAIIIcM-J90b-J9fFd8" },
         }
       );
 
