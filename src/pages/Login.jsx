@@ -59,6 +59,7 @@ const Login = () => {
             </Col>
             <Col sm={5}>
               <Button
+                onClick={console.log("dvcds")}
                 className="mt-5"
                 style={{ width: 120, marginLeft: 100 }}
                 variant="secondary"

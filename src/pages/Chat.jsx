@@ -63,6 +63,13 @@ const Chat = () => {
       <Row style={{ width: 1546 }}>
         <Col md={8} style={{ border: "solid black 1px" }}>
           md=8
+          <button
+            onClick={() => {
+              console.log("cl");
+            }}
+          >
+            fsdevsfe
+          </button>
         </Col>
         <Col md={4} style={{ border: "solid black 1px" }}>
           md=4

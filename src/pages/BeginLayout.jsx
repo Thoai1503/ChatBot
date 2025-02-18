@@ -6,6 +6,7 @@ const BeginLayout = () => {
   return (
     <body>
       <NavBar />
+
       <Outlet />
     </body>
   );

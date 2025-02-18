@@ -3,8 +3,9 @@ import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import Login from "./pages/Login";
 import BeginLayout from "./pages/BeginLayout";
-import Register from "./pages/Register";
+
 import Service from "./pages/Service";
+import ChatRoom from "./pages/ChatRoom";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         path: "chat/service",
         element: <Service />,
       },
+      {
+        path: "chat/register",
+        element: <ChatRoom />,
+      },
     ],
   },
   {
@@ -29,10 +34,6 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
       },
     ],
   },
