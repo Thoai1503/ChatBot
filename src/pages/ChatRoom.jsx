@@ -20,26 +20,8 @@ const ChatRoom = () => {
   });
 
   useEffect(() => {
-    if (roomList.length === 0) {
-      const defaultRooms = [
-        {
-          id: 1,
-          title: "Tổng bí thư chủ tịch nước",
-          messHistory: [
-            { role: "user", text: "daev" },
-            {
-              role: "model",
-              text: "dvczbskbfc zcjvsdvz jxvasxcv  Jvbsdcb zvdfscbl",
-            },
-          ],
-        },
-        { id: 2, title: "Hôm nay có mưa ko", messHistory: [] },
-        { id: 3, title: "Hôm nay ko có mưa ", messHistory: [] },
-      ];
-      setRoomList(defaultRooms);
-      localStorage.setItem("ROOMLIST", JSON.stringify(defaultRooms));
-    }
-  }, []);
+    localStorage.setItem("ROOMLIST", JSON.stringify(roomList));
+  }, [roomList]);
   // Run when roomList changes
 
   const addRoom = () => {

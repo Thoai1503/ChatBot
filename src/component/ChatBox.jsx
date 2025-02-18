@@ -46,9 +46,15 @@ const ChatBox = ({ roomToChat, setRoomToChat, roomList, setRoomList }) => {
   useEffect(() => {
     if (newMessage) {
       setRoomToChat((prev) => {
+        const isFirstMessage = prev.messHistory.length === 0;
+        console.log("Boolean:" + isFirstMessage);
+        console.log(newMessage);
         const updatedRoom = {
           ...prev,
           messHistory: [...prev.messHistory, newMessage],
+          title: isFirstMessage
+            ? prev.title
+            : newMessage.text.substring(0, 20) + "...", // Set title from first message
         };
 
         // Update roomList
@@ -61,7 +67,7 @@ const ChatBox = ({ roomToChat, setRoomToChat, roomList, setRoomList }) => {
         return updatedRoom;
       });
 
-      setNewMessage(null); // Reset new message after updating state
+      setNewMessage(null);
     }
   }, [newMessage, roomList]);
   return (
@@ -72,9 +78,7 @@ const ChatBox = ({ roomToChat, setRoomToChat, roomList, setRoomList }) => {
           <ChatBotIcon />
           <p className="message-text">Hello! guy</p>
         </div>
-        <div className="message user-message">
-          <div>Hi there!</div>
-        </div>
+
         {messageHistory.length > 0 &&
           messageHistory.map((chat, index) => {
             return <ChatAuth key={index} chat={chat} />;
